@@ -15,7 +15,7 @@ app.post("/contact", async function (req, res) {
     try {
         const { data, error } = await resend.emails.send({
             from: "Portfolio <onboarding@resend.dev>",
-            to: [process.env.EMAIL_USER],
+            to: process.env.EMAIL_USER,
             subject: "New Portfolio Contact Message",
             text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
         });
