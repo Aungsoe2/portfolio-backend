@@ -6,7 +6,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const app = express();
 app.use(cors({
-    origin: "https://aungsoe2.github.io"
+    origin: [
+        "https://aungsoe2.github.io",
+        "http://localhost:8000"
+    ]
 }));
 app.use(express.json());
 app.post("/contact", async function (req, res) {
